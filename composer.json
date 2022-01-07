@@ -1,0 +1,40 @@
+{
+    "name": "castor/tabloid",
+    "description": "A simple Object Relational Mapper for small projects",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "keywords": ["php", "container", "psr", "php7", "psr7", "router", "http", "middleware"],
+    "authors": [
+        {
+            "name": "Matias Navarro Carter",
+            "email": "mnavarrocarter@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "ext-pdo": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Castor\\Tabloid\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Castor\\Tabloid\\": "tests"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "8.0"
+        }
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest",
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "phpunit/phpunit": "^9.5",
+        "vimeo/psalm": "^4.6",
+        "nyholm/psr7": "^1.4",
+        "symfony/var-dumper": "^5.3"
+    }
+}

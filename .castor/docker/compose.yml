@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+
+  main:
+    image: castor/tanbloid-dev:latest
+    container_name: castor-tabloid.dev
+    build:
+      context: .
+      dockerfile: main/Dockerfile
+    volumes:
+      - ../../:/castor/lib
+    working_dir: /castor/lib
+    user: castor
+
+  mysql:
+    image: mysql:5.7
+    container_name: castor-tabloid.mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=toor
+      - MYSQL_DATABASE=test
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=pass
+    volumes:
+      - ./mysql/schema.sql:/docker-entrypoint-initdb.d/00-schema.sql
+    ports:
+      - "3306:3306"
